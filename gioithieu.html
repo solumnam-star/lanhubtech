@@ -295,46 +295,55 @@ quản lý và giám sát hệ thống một cách nhanh chóng và thuận ti�
 
     
     <!-- DOWNLOAD -->
+<!-- DOWNLOAD -->
 <section id="download" style="scroll-margin-top: 100px;">
-    <div class="content-row" style="justify-content: center; text-align: center;">
-        <div class="text-side" style="max-width: 800px;">
-            <h1 class="section-title">TẢI PHẦN MỀM</h1>
+    <div class="content-row">
+        <div class="text-side">
+            <h1 class="section-title" style="text-align: center; margin-bottom: 50px;">
+                TẢI PHẦN MỀM LANHUB
+            </h1>
             
-            <div class="feature-box" style="text-align: center; padding: 40px 30px;">
-                <p style="font-size: 1.45rem; margin-bottom: 30px;">
-                    <strong>Phiên bản hiện tại:</strong><br>
-                    LANHUB TECH <strong>v1.0</strong>
-                </p>
-
-                <!-- Nút tải Desktop -->
-                <button class="download-btn" style="margin-bottom: 50px;">
-                    DOWNLOAD CHO MÁY TÍNH
-                </button>
-
-                <!-- Phần QR Code Mobile -->
-                <h2 style="color: #7cc7ff; margin: 30px 0 20px 0; font-size: 1.8rem;">
-                    📱 TẢI CHO ĐIỆN THOẠI
-                </h2>
+            <div style="display: flex; gap: 60px; justify-content: center; flex-wrap: wrap;">
                 
-                <div style="background: rgba(255,255,255,0.1); 
-                            padding: 25px; 
-                            border-radius: 20px; 
-                            display: inline-block;
-                            border: 2px solid rgba(0,170,255,0.3);">
-                    
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&data=https://lanhubtech.xyz/mobile" 
-                         alt="QR Code Tải LANHUB Mobile" 
-                         style="border-radius: 12px; box-shadow: 0 0 25px rgba(0,170,255,0.6);">
-
-                    <p style="margin-top: 20px; font-size: 1.1rem; color: #d6e7ff;">
-                        Quét mã QR để tải phiên bản Mobile
+                <!-- BÊN TRÁI: MOBILE -->
+                <div style="flex: 1; min-width: 320px; text-align: center;">
+                    <h2 style="color: #7cc7ff; font-size: 1.7rem; margin-bottom: 20px;">
+                        📱 PHIÊN BẢN DI ĐỘNG
+                    </h2>
+                    <div style="background: rgba(255,255,255,0.08); 
+                                padding: 25px; 
+                                border-radius: 20px; 
+                                border: 2px solid rgba(0,170,255,0.3);">
+                        
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https://lanhubtech.xyz/mobile" 
+                             alt="QR Code Mobile" 
+                             style="border-radius: 12px; box-shadow: 0 0 20px rgba(0,170,255,0.5);">
+                        
+                        <p style="margin-top: 18px; font-size: 1.1rem; color: #d6e7ff;">
+                            Quét mã QR để tải phiên bản Mobile
+                        </p>
+                    </div>
+                    <p style="margin-top: 15px; color: #ffcc77; font-size: 1rem;">
+                        ⚠️ Phiên bản Mobile đang phát triển
                     </p>
                 </div>
 
-                <p style="margin-top: 25px; font-size: 1.05rem; color: #ffcc77; font-style: italic;">
-                    ⚠️ Hiện tại phiên bản Mobile đang trong giai đoạn phát triển.<br>
-                    Quét mã sẽ hiển thị thông báo "Chưa hỗ trợ".
-                </p>
+                <!-- BÊN PHẢI: DESKTOP -->
+                <div style="flex: 1; min-width: 320px; text-align: center;">
+                    <h2 style="color: #7cc7ff; font-size: 1.7rem; margin-bottom: 20px;">
+                        💻 PHIÊN BẢN MÁY TÍNH
+                    </h2>
+                    <div class="feature-box" style="text-align: center; padding: 35px 20px;">
+                        <p style="font-size: 1.4rem; margin-bottom: 30px;">
+                            <strong>Phiên bản hiện tại:</strong><br>
+                            LANHUB TECH <strong>v1.0</strong>
+                        </p>
+                        <button class="download-btn" style="width: 100%; max-width: 320px;">
+                            DOWNLOAD CHO MÁY TÍNH
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
