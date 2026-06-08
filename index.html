@@ -5,24 +5,99 @@
 <title>LANHUB TECH</title>
 
 <style>
+
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
 
-    background: 
+    background:
       linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
       url("logo.png");
 
     background-size: cover;
     background-position: center;
+
     color: white;
+    font-family: Arial;
 }
+
+/* KHUNG CHỨA NÚT */
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* NÚT BẤM */
+.menu button {
+
+    width: 3cm;
+    height: 55px;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: white;
+    cursor: pointer;
+
+    background: linear-gradient(
+        to bottom,
+        #4da3ff,
+        #0066ff
+    );
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,0.5),
+        inset 0 2px 4px rgba(255,255,255,0.4);
+
+    transition: 0.2s;
+}
+
+/* HIỆU ỨNG DI CHUỘT */
+.menu button:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.6),
+        inset 0 2px 5px rgba(255,255,255,0.5);
+}
+
+/* HIỆU ỨNG NHẤN */
+.menu button:active {
+    transform: scale(0.97);
+}
+
 </style>
 
 </head>
 
 <body>
 
+<div class="menu">
 
+    <button>HOME</button>
+
+    <button>SCAN</button>
+
+    <button>SERVER</button>
+
+    <button>CLIENT</button>
+
+    <button>TOOLS</button>
+
+    <button>ABOUT</button>
+
+</div>
+
+</body>
 </html>
