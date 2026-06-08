@@ -1,526 +1,294 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>LANHUB TECH</title>
-
-<style>
-
-/* =========================
-   TOÀN TRANG
-========================= */
-
-body{
-    margin:0;
-    padding:0;
-
-    font-family: Arial, sans-serif;
-    color:white;
-
-    background:
-    linear-gradient(rgba(0,0,0,0),
-    rgba(0,0,0,0)),
-    url("anh 8.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-}
-
-/* =========================
-   MENU
-========================= */
-
-.menu{
-
-    position:fixed;
-
-    top:50%;
-    left:35px;
-
-    transform:translateY(-50%);
-
-    display:flex;
-    flex-direction:column;
-
-    gap:18px;
-
-    z-index:999;
-}
-
-.menu button{
-
-    width:3.2cm;
-    height:55px;
-
-    border:none;
-    border-radius:14px;
-
-    font-size:15px;
-    font-weight:bold;
-
-    color:white;
-
-    cursor:pointer;
-
-    background:rgba(0,102,255,0.35);
-
-    backdrop-filter:blur(6px);
-
-    border:1px solid rgba(255,255,255,0.2);
-
-    box-shadow:
-    0 6px 15px rgba(0,0,0,0.5),
-    inset 0 2px 4px rgba(255,255,255,0.3);
-
-    transition:0.25s;
-}
-
-.menu button:hover{
-
-    transform:scale(1.05);
-
-    background:rgba(0,140,255,0.5);
-
-    box-shadow:
-    0 10px 20px rgba(0,0,0,0.6),
-    0 0 20px rgba(0,150,255,0.5);
-}
-
-/* =========================
-   KHỐI NỘI DUNG
-========================= */
-
-.section{
-
-    min-height:100vh;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-
-    padding-left:260px;
-    padding-right:80px;
-}
-
-/* =========================
-   TRANG ĐẦU
-========================= */
-
-.hero h1{
-
-    font-size:72px;
-
-    margin:0;
-
-    letter-spacing:4px;
-
-    text-shadow:
-    0 0 20px rgba(0,150,255,0.8);
-}
-
-.hero p{
-
-    font-size:24px;
-
-    max-width:700px;
-
-    line-height:1.6;
-
-    color:#d6e7ff;
-}
-
-/* =========================
-   TIÊU ĐỀ PHẦN
-========================= */
-
-.section-title{
-
-    font-size:42px;
-
-    margin-bottom:25px;
-
-    color:#7cc7ff;
-
-    text-shadow:
-    0 0 15px rgba(0,150,255,0.7);
-}
-
-/* =========================
-   KHUNG TÍNH NĂNG
-========================= */
-
-.feature-box{
-
-    width:100%;
-
-    padding:25px;
-
-    margin-top:20px;
-
-    border-radius:20px;
-
-    background:rgba(0,0,0,0.35);
-
-    backdrop-filter:blur(5px);
-
-    border:1px solid rgba(255,255,255,0.1);
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,0.5);
-}
-
-.feature-box h3{
-
-    margin-top:0;
-
-    color:#6bc4ff;
-}
-
-.feature-box p{
-
-    line-height:1.7;
-
-    color:#d8e7ff;
-}
-
-/* =========================
-   NÚT DOWNLOAD
-========================= */
-
-.download-btn{
-
-    width:260px;
-    height:65px;
-
-    margin-top:30px;
-
-    border:none;
-    border-radius:16px;
-
-    font-size:22px;
-    font-weight:bold;
-
-    color:white;
-
-    cursor:pointer;
-
-    background:
-    linear-gradient(to bottom,
-    #39a6ff,
-    #005eff);
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,0.5),
-    0 0 25px rgba(0,140,255,0.5);
-
-    transition:0.25s;
-}
-
-.download-btn:hover{
-
-    transform:scale(1.05);
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.6),
-    0 0 35px rgba(0,170,255,0.8);
-}
-   /* =========================
-   GIỚI THIỆU
-========================= */
-
-.gioithieu-box{
-
-    min-height:100vh;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding-left:150px;
-
-    padding-right:80px;
-
-    gap:50px;
-}
-
-/* KHỐI CHỮ */
-
-.gioithieu-text{
-
-    width:40%;
-
-    
-}
-
-.gioithieu-text h1{
-
-    font-size:55px;
-
-    color:#7cc7ff;
-
-    text-shadow:
-    0 0 20px rgba(0,150,255,0.7);
-}
-
-.gioithieu-text p{
-
-    font-size:22px;
-
-    line-height:1.8;
-
-    color:#d8e7ff;
-}
-
-/* KHỐI ẢNH */
-
-.gioithieu-image{
-
-    width:500px;
-
-    min-width:800px;
-}
-
-.gioithieu-image img{
-
-    width:800px;
-
-    height:500px;
-
-    object-fit:cover;
-
-    border-radius:25px;
-
-    box-shadow:
-    0 0 35px rgba(0,150,255,0.5);
-
-    transition:0.3s;
-}
-
-/* HIỆU ỨNG DI CHUỘT */
-
-.gioithieu-image img:hover{
-
-    transform:scale(1.02);
-
-    box-shadow:
-    0 0 45px rgba(0,180,255,0.8);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-
-    text-align:center;
-
-    padding:30px;
-
-    background:rgba(0,0,0,0.45);
-
-    color:#c7dfff;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANHUB TECH</title>
+    <style>
+        :root {
+            --primary: #00aaff;
+            --dark: #0a0f1c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
+                        url("anh 8.jpg") center/cover fixed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===================== MENU ===================== */
+        .menu {
+            position: fixed;
+            top: 50%;
+            left: 40px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 1000;
+        }
+
+        .menu button {
+            width: 180px;
+            height: 58px;
+            border: none;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 102, 255, 0.35);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5),
+                        inset 0 2px 4px rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+
+        .menu button:hover {
+            transform: scale(1.08);
+            background: rgba(0, 140, 255, 0.55);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6),
+                        0 0 25px rgba(0, 170, 255, 0.6);
+        }
+
+        /* ===================== SECTION ===================== */
+        section {
+            min-height: 100vh;
+            padding: 100px 80px 80px 280px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            padding-top: 140px;
+        }
+
+        .hero h1 {
+            font-size: 4.8rem;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(0, 170, 255, 0.8);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 680px;
+            color: #d6e7ff;
+            margin-bottom: 40px;
+        }
+
+        .download-btn {
+            padding: 18px 50px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 16px;
+            background: linear-gradient(to bottom, #39a6ff, #005eff);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5),
+                        0 0 30px rgba(0, 140, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.6),
+                        0 0 40px rgba(0, 200, 255, 0.8);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: #7cc7ff;
+            text-shadow: 0 0 20px rgba(0, 150, 255, 0.7);
+        }
+
+        /* ===================== GIỚI THIỆU & TÍNH NĂNG ===================== */
+        .content-row {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            width: 100%;
+        }
+
+        .text-side {
+            flex: 1;
+        }
+
+        .image-side {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-side img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 0 40px rgba(0, 170, 255, 0.5);
+            transition: all 0.4s;
+        }
+
+        .image-side img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 55px rgba(0, 190, 255, 0.8);
+        }
+
+        .feature-box {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            padding: 28px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+
+        .feature-box h3 {
+            color: #6bc4ff;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        /* ===================== FOOTER ===================== */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #c7dfff;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .content-row {
+                flex-direction: column;
+                gap: 50px;
+                text-align: center;
+            }
+            section {
+                padding-left: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                left: 20px;
+            }
+            section {
+                padding: 100px 30px 80px;
+            }
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- =====================
-     MENU
-===================== -->
-
-<div class="menu">
-
-<button onclick="location.href='https://lanhubtech.xyz'">
-TRANG CHỦ
-</button>
-
-<button onclick="location.href='#gioithieu'">
-GIỚI THIỆU
-</button>
-
-<button onclick="location.href='#tinhnang'">
-TÍNH NĂNG
-</button>
-
-<button onclick="location.href='#download'">
-TẢI XUỐNG
-</button>
-
-<button onclick="location.href='#lienhe'">
-LIÊN HỆ
-</button>
-
-</div>
-
-<!-- =====================
-     TRANG ĐẦU
-===================== -->
-
-<section class="section hero" id="home">
-
-<h1>LANHUB</h1>
-
-<p>
-Nền tảng quản lý và kết nối mạng LAN hiện đại.
-Giám sát thiết bị, điều khiển nội bộ và hỗ trợ truy cập từ xa
-trong một hệ thống đơn giản và mạnh mẽ.
-</p>
-
-<button class="download-btn">
-TẢI PHẦN MỀM
-</button>
-
-</section>
-
-<!-- =====================
-     GIỚI THIỆU
-===================== -->
-
-<div class="gioithieu-box" id="gioithieu">
-
-    <div class="gioithieu-text">
-
-        <h1>GIỚI THIỆU LANHUB</h1>
-
-        <p>
-        LANHUB là nền tảng hỗ trợ quản lý và kết nối
-        mạng LAN nội bộ với giao diện hiện đại,
-        tốc độ nhanh và khả năng mở rộng mạnh mẽ.
-        </p>
-
+    <!-- MENU -->
+    <div class="menu">
+        <button onclick="location.href='https://lanhubtech.xyz'">TRANG CHỦ</button>
+        <button onclick="location.href='#gioithieu'">GIỚI THIỆU</button>
+        <button onclick="location.href='#tinhnang'">TÍNH NĂNG</button>
+        <button onclick="location.href='#download'">TẢI XUỐNG</button>
+        <button onclick="location.href='#lienhe'">LIÊN HỆ</button>
     </div>
 
-    <div class="gioithieu-image">
-
-        <img src="anh 2.jpg">
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================
-     TÍNH NĂNG
-===================== -->
-
-<section class="section" id="tinhnang">
-
-<div class="gioithieu-box">
-
-    <!-- KHỐI CHỮ -->
-
-    <div class="gioithieu-text">
-
-        <h1>TÍNH NĂNG LANHUB</h1>
-
-        <div class="feature-box">
-
-            <h3>QUÉT THIẾT BỊ MẠNG</h3>
-
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div>
+            <h1>LANHUB</h1>
             <p>
-            Tự động phát hiện thiết bị đang hoạt động trong hệ thống LAN.
+                Nền tảng quản lý và kết nối mạng LAN hiện đại.<br>
+                Giám sát thiết bị, điều khiển nội bộ và hỗ trợ truy cập từ xa
+                trong một hệ thống đơn giản và mạnh mẽ.
             </p>
-
+            <button class="download-btn">TẢI PHẦN MỀM</button>
         </div>
+    </section>
 
-        <div class="feature-box">
-
-            <h3>GIÁM SÁT ONLINE</h3>
-
-            <p>
-            Theo dõi trạng thái máy tính theo thời gian thực.
-            </p>
-
+    <!-- GIỚI THIỆU -->
+    <section id="gioithieu">
+        <div class="content-row">
+            <div class="text-side">
+                <h1 class="section-title">GIỚI THIỆU LANHUB</h1>
+                <p style="font-size: 1.35rem; color: #d8e7ff;">
+                    LANHUB là nền tảng hỗ trợ quản lý và kết nối mạng LAN nội bộ 
+                    với giao diện hiện đại, tốc độ nhanh và khả năng mở rộng mạnh mẽ.
+                </p>
+            </div>
+            <div class="image-side">
+                <img src="anh 2.jpg" alt="Giới thiệu LANHUB">
+            </div>
         </div>
+    </section>
 
-        <div class="feature-box">
-
-            <h3>ĐIỀU KHIỂN TỪ XA</h3>
-
-            <p>
-            Hỗ trợ điều khiển và quản lý hệ thống nội bộ dễ dàng.
-            </p>
-
+    <!-- TÍNH NĂNG -->
+    <section id="tinhnang">
+        <div class="content-row">
+            <div class="text-side">
+                <h1 class="section-title">TÍNH NĂNG NỔI BẬT</h1>
+                
+                <div class="feature-box">
+                    <h3>🔍 QUÉT THIẾT BỊ MẠNG</h3>
+                    <p>Tự động phát hiện tất cả thiết bị đang hoạt động trong hệ thống LAN.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>📡 GIÁM SÁT ONLINE</h3>
+                    <p>Theo dõi trạng thái máy tính theo thời gian thực.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🎮 ĐIỀU KHIỂN TỪ XA</h3>
+                    <p>Hỗ trợ điều khiển và quản lý hệ thống nội bộ dễ dàng.</p>
+                </div>
+            </div>
+            <div class="image-side">
+                <img src="anh 3.jpg" alt="Tính năng LANHUB">
+            </div>
         </div>
+    </section>
 
+    <!-- DOWNLOAD -->
+    <section id="download">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h1 class="section-title">TẢI PHẦN MỀM</h1>
+            <div class="feature-box" style="text-align: center;">
+                <p style="font-size: 1.4rem; margin-bottom: 25px;">
+                    <strong>Phiên bản hiện tại:</strong><br>
+                    LANHUB TECH <strong>v1.0</strong>
+                </p>
+                <button class="download-btn">DOWNLOAD NGAY</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIÊN HỆ -->
+    <section id="lienhe">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <h1 class="section-title">LIÊN HỆ</h1>
+            <div class="feature-box">
+                <p><strong>Email:</strong> lanhubtech@gmail.com</p>
+                <p><strong>Zalo:</strong> 0123 456 789</p>
+                <p><strong>Telegram:</strong> @lanhubtech</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        LANHUB TECH © 2026 - All Rights Reserved
     </div>
-
-    <!-- KHỐI ẢNH -->
-
-    <div class="gioithieu-image">
-
-        <img src="anh 3.jpg">
-
-    </div>
-
-</div>
-
-</section>
-<!-- =====================
-     DOWNLOAD
-===================== -->
-
-<section class="section" id="download">
-
-<h2 class="section-title">
-TẢI PHẦN MỀM
-</h2>
-
-<div class="feature-box">
-
-<p>
-Phiên bản hiện tại:
-LANHUB TECH v1.0
-</p>
-
-<button class="download-btn">
-DOWNLOAD
-</button>
-
-</div>
-
-
-
-<!-- =====================
-     LIÊN HỆ
-===================== -->
-
-<section class="section" id="lienhe">
-
-<h2 class="section-title">
-LIÊN HỆ
-</h2>
-
-<div class="feature-box">
-
-<p>Email: lanhubtech@gmail.com</p>
-
-<p>Zalo: 0123 456 789</p>
-
-<p>Telegram: @lanhubtech</p>
-
-</div>
-
-</section>
-
-<!-- =====================
-     FOOTER
-===================== -->
-
-<div class="footer">
-
-LANHUB TECH © 2026
-
-</div>
 
 </body>
 </html>
