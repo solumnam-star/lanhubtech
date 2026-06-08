@@ -132,11 +132,13 @@
         }
 
         .image-side img {
-            max-width: 110%;
-            height: auto;
-            border-radius: 24px;
-            box-shadow: 0 0 40px rgba(0, 170, 255, 0.5);
-            transition: all 0.4s;
+    max-width: 100%;        /* Sửa từ 110% thành 100% */
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 0 40px rgba(0, 170, 255, 0.5);
+    transition: all 0.4s;
+    object-fit: cover;      /* Thêm dòng này để ảnh cân đối hơn */
+}
         }
 
         .image-side img:hover {
@@ -191,7 +193,20 @@
             .hero h1 {
                 font-size: 3.5rem;
             }
-        }
+            .hero .content-row {
+    min-height: 80vh;
+    align-items: center;
+}
+
+.hero .text-side h1 {
+    font-size: 5rem;
+    margin-bottom: 24px;
+}
+
+.hero .text-side p {
+    font-size: 1.55rem;
+}
+
     </style>
 </head>
 <body>
@@ -206,22 +221,23 @@
     </div>
 
     <!-- HERO -->
-    <section class="hero" id="home">
-        <div>
+    <!-- HERO -->
+<section class="hero" id="home">
+    <div class="content-row">
+        <div class="text-side">
             <h1>LANHUB</h1>
             <p>
                 Nền tảng quản lý và kết nối mạng LAN hiện đại.<br>
-                Giám sát thiết bị, điều khiển nội bộ .<br> 
-                hỗ trợ truy cập từ xa.<br>
-                trong một hệ thống đơn giản và mạnh mẽ.
+                Giám sát thiết bị, điều khiển nội bộ.<br>
+                Hỗ trợ truy cập từ xa.<br>
+                Trong một hệ thống đơn giản và mạnh mẽ.
             </p>
-            </div>
-            <div class="image-side">
-                <img src="anh10.jpg" alt="LANHUB">
-                
-           
         </div>
-    </section>
+        <div class="image-side">
+            <img src="anh10.jpg" alt="LANHUB">
+        </div>
+    </div>
+</section>
 
     <!-- GIỚI THIỆU -->
     <section id="gioithieu">
