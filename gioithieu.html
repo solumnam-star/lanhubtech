@@ -211,6 +211,40 @@
                 font-size: 1.55rem;
             }
         }
+        /* ===================== DOWNLOAD COUNTER ===================== */
+
+.download-card {
+    position: relative;
+}
+
+.download-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 16px;
+    margin-bottom: 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    color: #dff4ff;
+    font-size: 0.95rem;
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.35),
+        inset 0 1px 2px rgba(255,255,255,0.15);
+}
+
+.download-count span {
+    color: #00d9ff;
+    font-size: 1rem;
+}
     </style>
 </head>
 <body>
@@ -323,7 +357,7 @@
                         <h2 style="color: #7cc7ff; font-size: 1.65rem; margin-bottom: 15px; text-align: center;">
                             🆓 PHIÊN BẢN MIỄN PHÍ
                         </h2>
-                        <div class="feature-box" style="padding: 28px 20px; text-align: center;">
+                        <div class="feature-box download-card" style="padding: 28px 20px; text-align: center;">
                             <p style="font-size: 1.3rem; margin-bottom: 20px;">
                                 LANHUB TECH <strong>v1.0 Free</strong>
                             </p>
@@ -331,6 +365,9 @@
                                 <li>✔ Quét thiết bị mạng</li>
                                 <li>✔ Giám sát cơ bản</li>
                                 <li>✔ Điều khiển giới hạn</li>
+                                <div class="download-count">
+    ⬇ Đã tải <span>12,847</span>
+</div>
                             </ul>
                             <a href="https://github.com/solumnam-star/lanhubtech/releases/download/v1.0.0/LANHUB.exe" download style="text-decoration: none; display: block; width: 100%;">
                                 <button class="download-btn" style="width: 100%; cursor: pointer;">
@@ -352,6 +389,8 @@
                                 <li>✔ Toàn bộ tính năng Free</li>
                                 <li>✔ Giám sát nâng cao</li>
                                 <li>✔ Điều khiển không giới hạn</li>
+                                <div class="download-count">
+   
                             </ul>
                             <button class="download-btn" style="width: 100%; background: linear-gradient(to bottom, #00ffaa, #00aa77);">
                                 DOWNLOAD PRO
