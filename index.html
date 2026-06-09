@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <title>LANHUB TECH</title>
 
 <style>
@@ -14,30 +15,34 @@ body {
       url("logo.png");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Không cho hình nền lặp lại */
+    background-attachment: fixed; /* Khóa chết hình nền không bị cuộn */
     color: white;
     font-family: Arial;
 }
 
-/* KHUNG CHỨA NÚT */
+/* KHUNG CHỨA NÚT (Tối ưu để tự động căn giữa trên điện thoại) */
 .menu {
     position: absolute;
     top: 35%;
-    left: 1600px;
+    /* Sửa lại đoạn này để trên màn hình nào cũng ở vị trí đẹp, không dùng cố định 1600px */
+    right: 5%; 
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 18px;
+    max-width: 90%;
 }
 
-/* THẺ LIÊN KẾT BỌC NGOÀI */
 .menu a {
-    text-decoration: none; /* Xóa gạch chân mặc định của link */
+    text-decoration: none;
     display: block;
 }
 
 /* NÚT BẤM */
 .menu button {
     width: 6cm;
+    max-width: 100%; /* Đảm bảo nút không bị tràn màn hình nhỏ */
     height: 55px;
     border: none;
     border-radius: 14px;
@@ -54,7 +59,6 @@ body {
     transition: 0.2s;
 }
 
-/* HIỆU ỨNG DI CHUỘT */
 .menu button:hover {
     transform: scale(1.05);
     box-shadow:
@@ -62,12 +66,20 @@ body {
         inset 0 2px 5px rgba(255,255,255,0.5);
 }
 
-/* HIỆU ỨNG NHẤN */
 .menu button:active {
     transform: scale(0.97);
 }
-</style>
 
+/* 2. THÊM ĐOẠN NÀY: Dành riêng cho màn hình Điện thoại */
+@media (max-width: 768px) {
+    .menu {
+        /* Trên điện thoại đưa menu ra chính giữa màn hình cho dễ bấm */
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%); 
+    }
+}
+</style>
 </head>
 
 <body>
