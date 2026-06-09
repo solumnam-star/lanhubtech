@@ -34,41 +34,6 @@ url("anh 8.jpg") center/cover no-repeat fixed;
             scroll-behavior: smooth;
         }
         <style>
-       
-        
-        <script>
-
-async function loadDownloadCount() {
-
-    try {
-
-        const response = await fetch(
-            "https://api.github.com/repos/solumnam-star/lanhubtech/releases/latest"
-        );
-
-        const data = await response.json();
-
-        let total = 0;
-
-        data.assets.forEach(asset => {
-            total += asset.download_count;
-        });
-
-        document.getElementById("downloadCount").innerText =
-            total.toLocaleString();
-
-    } catch (error) {
-
-        console.log("Không lấy được lượt tải", error);
-
-    }
-
-}
-
-loadDownloadCount();
-
-</script>
-    </body>
  
         /* ===================== DOWNLOAD COUNTER ===================== */
 
