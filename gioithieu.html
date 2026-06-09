@@ -50,24 +50,18 @@ loadDownloadCount();
 
      body {
 
-    font-family: Arial, sans-serif;
-    color: white;
-
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
-    url("/lanhubtech/anh8.jpg");
-
+      linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+      url("anh8.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    line-height: 1.6;
-
-    overflow-x: hidden;
-
-    scroll-behavior: smooth;
-}
+    background-repeat: no-repeat; /* Không cho hình nền lặp lại */
+    background-attachment: fixed; /* Khóa chết hình nền không bị cuộn */
+    color: white;
+    font-family: Arial;
 
         /* ===================== MENU ===================== */
         .menu {
