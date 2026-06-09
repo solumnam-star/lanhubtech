@@ -31,36 +31,42 @@
             scroll-behavior: smooth;
         }
 <script>
-
+// Tải số lượt tải
 async function loadDownloadCount() {
+    const countElement = document.getElementById("downloadCount");
+    if (!countElement) {
+        console.warn("Không tìm thấy element #downloadCount");
+        return;
+    }
 
     try {
-
         const response = await fetch(
-            "https://api.github.com/repos/solumnam-star/lanhubtech/releases/latest"
+            "https://api.github.com/repos/solumnam-star/lanhubtech/releases/latest",
+            { cache: "no-cache" }   // Tránh cache mạnh
         );
 
-        const data = await response.json();
+        if (!response.ok) throw new Error("API error");
 
+        const data = await response.json();
         let total = 0;
 
         data.assets.forEach(asset => {
-            total += asset.download_count;
+            total += asset.download_count || 0;
         });
 
-        document.getElementById("downloadCount").innerText =
-            total.toLocaleString();
-
+        countElement.innerText = total.toLocaleString('vi-VN');
+        console.log("✅ Tổng lượt tải:", total);
     } catch (error) {
-
-        console.log("Không lấy được lượt tải", error);
-
+        console.error("❌ Không lấy được lượt tải:", error);
+        countElement.innerText = "—";
     }
-
 }
 
-loadDownloadCount();
+// Chạy khi trang load
+document.addEventListener("DOMContentLoaded", loadDownloadCount);
 
+// (Tùy chọn) Tự động refresh mỗi 2 phút
+setInterval(loadDownloadCount, 120000);
 </script>
         
        
