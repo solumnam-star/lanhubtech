@@ -1,435 +1,367 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LANHUB TECH</title>
-    <style>
-        :root {
-            --primary: #00aaff;
-            --dark: #0a0f1c;
-        }
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    body {
+font-family: Arial, sans-serif;
+color: white;
+/* Sửa lại dòng background dưới đây */
+background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
+            url("anh 8.jpg") center/cover no-repeat fixed; 
+line-height: 1.6;
+overflow-x: hidden;
+scroll-behavior: smooth;
 
+}
 
-     body {
+    /* ===================== MENU ===================== */
+    .menu {
+        position: fixed;
+        top: 50%;
+        left: 40px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        z-index: 1000;
+    }
 
-    font-family: Arial, sans-serif;
-    color: white;
+    .menu a {
+        text-decoration: none;
+        display: block;
+    }
 
-    background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
-    url("/lanhubtech/anh8.jpg");
+    .menu button {
+        width: 180px;
+        height: 58px;
+        border: none;
+        border-radius: 14px;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        background: rgba(0, 102, 255, 0.35);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.5),
+                    inset 0 2px 4px rgba(255,255,255,0.3);
+        transition: all 0.3s;
+    }
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    .menu button:hover {
+        transform: scale(1.08);
+        background: rgba(0, 140, 255, 0.55);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.6),
+                    0 0 25px rgba(0, 170, 255, 0.6);
+    }
 
-    line-height: 1.6;
+    /* ===================== SECTION ===================== */
+    section {
+        min-height: 100vh;
+        padding: 100px 80px 80px 280px;
+        display: flex;
+        align-items: center;
+    }
 
-    overflow-x: hidden;
+    .hero {
+        padding-top: 140px;
+    }
 
-    scroll-behavior: smooth;
-}     
-        /* ===================== MENU ===================== */
-        .menu {
-            position: fixed;
-            top: 50%;
-            left: 40px;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            z-index: 1000;
-        }
+    .hero h1 {
+        font-size: 4.8rem;
+        margin-bottom: 20px;
+        letter-spacing: 4px;
+        text-shadow: 0 0 30px rgba(0, 170, 255, 0.8);
+    }
 
-        .menu a {
-            text-decoration: none;
-            display: block;
-        }
+    .hero p {
+        font-size: 1.5rem;
+        max-width: 680px;
+        color: #d6e7ff;
+        margin-bottom: 40px;
+    }
 
-        .menu button {
-            width: 180px;
-            height: 58px;
-            border: none;
-            border-radius: 14px;
-            font-size: 15px;
-            font-weight: bold;
-            color: white;
-            cursor: pointer;
-            background: rgba(0, 102, 255, 0.35);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.2);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.5),
-                        inset 0 2px 4px rgba(255,255,255,0.3);
-            transition: all 0.3s;
-        }
+    .download-btn {
+        padding: 18px 50px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 16px;
+        background: linear-gradient(to bottom, #39a6ff, #005eff);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5),
+                    0 0 30px rgba(0, 140, 255, 0.6);
+        cursor: pointer;
+        transition: all 0.3s;
+    }
 
-        .menu button:hover {
-            transform: scale(1.08);
-            background: rgba(0, 140, 255, 0.55);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6),
-                        0 0 25px rgba(0, 170, 255, 0.6);
-        }
+    .download-btn:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.6),
+                    0 0 40px rgba(0, 200, 255, 0.8);
+    }
 
-        /* ===================== SECTION ===================== */
-        section {
-            min-height: 100vh;
-            padding: 100px 80px 80px 280px;
-            display: flex;
-            align-items: center;
-        }
+    .section-title {
+        font-size: 3rem;
+        margin-bottom: 40px;
+        color: #7cc7ff;
+        text-shadow: 0 0 20px rgba(0, 150, 255, 0.7);
+    }
 
-        .hero {
-            padding-top: 140px;
-        }
+    /* ===================== GIỚI THIỆU & TÍNH NĂNG ===================== */
+    .content-row {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        width: 100%;
+    }
 
-        .hero h1 {
-            font-size: 4.8rem;
-            margin-bottom: 20px;
-            letter-spacing: 4px;
-            text-shadow: 0 0 30px rgba(0, 170, 255, 0.8);
-        }
+    .text-side {
+        flex: 1;
+    }
 
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 680px;
-            color: #d6e7ff;
-            margin-bottom: 40px;
-        }
+    .image-side {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
 
-        .download-btn {
-            padding: 18px 50px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 16px;
-            background: linear-gradient(to bottom, #39a6ff, #005eff);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5),
-                        0 0 30px rgba(0, 140, 255, 0.6);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+    .image-side img {
+        max-width: 105%;
+        height: auto;
+        border-radius: 24px;
+        box-shadow: 0 0 40px rgba(0, 170, 255, 0.5);
+        transition: all 0.4s;
+        object-fit: cover;
+    }
 
-        .download-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.6),
-                        0 0 40px rgba(0, 200, 255, 0.8);
-        }
+    .image-side img:hover {
+        transform: scale(1.04);
+        box-shadow: 0 0 55px rgba(0, 190, 255, 0.8);
+    }
 
-        .section-title {
-            font-size: 3rem;
-            margin-bottom: 40px;
-            color: #7cc7ff;
-            text-shadow: 0 0 20px rgba(0, 150, 255, 0.7);
-        }
+    .feature-box {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+        padding: 23px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: 23px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
 
-        /* ===================== GIỚI THIỆU & TÍNH NĂNG ===================== */
+    .feature-box h3 {
+        color: #6bc4ff;
+        margin-bottom: 12px;
+        font-size: 1.4rem;
+    }
+
+    /* ===================== FOOTER ===================== */
+    .footer {
+        text-align: center;
+        padding: 40px;
+        background: rgba(0, 0, 0, 0.6);
+        color: #c7dfff;
+        font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
         .content-row {
-            display: flex;
-            align-items: center;
-            gap: 80px;
-            width: 100%;
-        }
-
-        .text-side {
-            flex: 1;
-        }
-
-        .image-side {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .image-side img {
-            max-width: 105%;
-            height: auto;
-            border-radius: 24px;
-            box-shadow: 0 0 40px rgba(0, 170, 255, 0.5);
-            transition: all 0.4s;
-            object-fit: cover;
-        }
-
-        .image-side img:hover {
-            transform: scale(1.04);
-            box-shadow: 0 0 55px rgba(0, 190, 255, 0.8);
-        }
-
-        .feature-box {
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(8px);
-            padding: 23px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 23px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-        }
-
-        .feature-box h3 {
-            color: #6bc4ff;
-            margin-bottom: 12px;
-            font-size: 1.4rem;
-        }
-
-        /* ===================== FOOTER ===================== */
-        .footer {
+            flex-direction: column;
+            gap: 50px;
             text-align: center;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.6);
-            color: #c7dfff;
-            font-size: 1.1rem;
         }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .content-row {
-                flex-direction: column;
-                gap: 50px;
-                text-align: center;
-            }
-            section {
-                padding-left: 100px;
-            }
+        section {
+            padding-left: 100px;
         }
+    }
 
-        @media (max-width: 768px) {
-            .menu {
-                left: 20px;
-            }
-            section {
-                padding: 100px 30px 80px;
-            }
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            .hero .content-row {
-                min-height: 80vh;
-                align-items: center;
-            }
-            .hero .text-side h1 {
-                font-size: 5rem;
-                margin-bottom: 24px;
-            }
-            .hero .text-side p {
-                font-size: 1.55rem;
-            }
+    @media (max-width: 768px) {
+        .menu {
+            left: 20px;
         }
-        /* ===================== DOWNLOAD COUNTER ===================== */
+        section {
+            padding: 100px 30px 80px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+        .hero .content-row {
+            min-height: 80vh;
+            align-items: center;
+        }
+        .hero .text-side h1 {
+            font-size: 5rem;
+            margin-bottom: 24px;
+        }
+        .hero .text-side p {
+            font-size: 1.55rem;
+        }
+    }
+</style>
 
-.download-card {
-    position: relative;
-}
+<div class="menu">
+    <a href="index.html"><button>TRANG CHỦ</button></a>
+    <a href="#gioithieu"><button>GIỚI THIỆU</button></a>
+    <a href="#tinhnang"><button>TÍNH NĂNG</button></a>
+    <a href="#download"><button>TẢI XUỐNG</button></a>
+    <a href="#lienhe"><button>LIÊN HỆ</button></a>
+</div>
 
-.download-count {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 8px 16px;
-    margin-bottom: 18px;
-
-    border-radius: 999px;
-
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    color: #dff4ff;
-    font-size: 0.95rem;
-    font-weight: bold;
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,0.35),
-        inset 0 1px 2px rgba(255,255,255,0.15);
-}
-
-.download-count span {
-    color: #00d9ff;
-    font-size: 1rem;
-}
-    </style>
-</head>
-<body>
-
-    <div class="menu">
-        <a href="index.html"><button>TRANG CHỦ</button></a>
-        <a href="#gioithieu"><button>GIỚI THIỆU</button></a>
-        <a href="#tinhnang"><button>TÍNH NĂNG</button></a>
-        <a href="#download"><button>TẢI XUỐNG</button></a>
-        <a href="#lienhe"><button>LIÊN HỆ</button></a>
+<section class="hero" id="home">
+    <div class="content-row">
+        <div class="text-side">
+            <h1>LANHUB</h1>
+            <p>
+                Nền tảng quản lý và kết nối mạng LAN hiện đại.<br>
+                Giám sát thiết bị, điều khiển nội bộ.<br>
+                Hỗ trợ truy cập từ xa.<br>
+                Trong một hệ thống đơn giản và mạnh mẽ.
+            </p>
+        </div>
+        <div class="image-side">
+            <img src="anh10.jpg" alt="LANHUB">
+        </div>
     </div>
+</section>
 
-    <section class="hero" id="home">
-        <div class="content-row">
-            <div class="text-side">
-                <h1>LANHUB</h1>
-                <p>
-                    Nền tảng quản lý và kết nối mạng LAN hiện đại.<br>
-                    Giám sát thiết bị, điều khiển nội bộ.<br>
-                    Hỗ trợ truy cập từ xa.<br>
-                    Trong một hệ thống đơn giản và mạnh mẽ.
-                </p>
-            </div>
-            <div class="image-side">
-                <img src="anh10.jpg" alt="LANHUB">
-            </div>
+<section id="gioithieu">
+    <div class="content-row">
+        <div class="text-side">
+            <h1 class="section-title">GIỚI THIỆU LANHUB</h1>
+            <p style="font-size: 1.35rem; color: #d8e7ff;">
+                LANHUB là nền tảng hỗ trợ quản lý và kết nối mạng LAN nội bộ
+                với giao diện hiện đại, tốc độ xử lý nhanh và khả năng mở rộng mạnh mẽ.<br><br>
+                Hệ thống được tối ưu hóa nhằm mang lại sự ổn định, linh hoạt và an toàn
+                cho môi trường mạng nội bộ trong doanh nghiệp hoặc hệ thống kỹ thuật.<br><br>
+                Cơ chế bảo mật được thiết kế tối ưu giúp tăng cường độ an toàn cho mọi kết nối,
+                hỗ trợ quản lý thiết bị hiệu quả và hạn chế các rủi ro trong quá trình vận hành.<br><br>
+                Giao diện hiện đại, trực quan và thân thiện giúp người dùng dễ dàng thao tác,
+                quản lý và giám sát hệ thống một cách nhanh chóng và thuận tiện.
+            </p>
         </div>
-    </section>
-
-    <section id="gioithieu">
-        <div class="content-row">
-            <div class="text-side">
-                <h1 class="section-title">GIỚI THIỆU LANHUB</h1>
-                <p style="font-size: 1.35rem; color: #d8e7ff;">
-                    LANHUB là nền tảng hỗ trợ quản lý và kết nối mạng LAN nội bộ
-                    với giao diện hiện đại, tốc độ xử lý nhanh và khả năng mở rộng mạnh mẽ.<br><br>
-                    Hệ thống được tối ưu hóa nhằm mang lại sự ổn định, linh hoạt và an toàn
-                    cho môi trường mạng nội bộ trong doanh nghiệp hoặc hệ thống kỹ thuật.<br><br>
-                    Cơ chế bảo mật được thiết kế tối ưu giúp tăng cường độ an toàn cho mọi kết nối,
-                    hỗ trợ quản lý thiết bị hiệu quả và hạn chế các rủi ro trong quá trình vận hành.<br><br>
-                    Giao diện hiện đại, trực quan và thân thiện giúp người dùng dễ dàng thao tác,
-                    quản lý và giám sát hệ thống một cách nhanh chóng và thuận tiện.
-                </p>
-            </div>
-            <div class="image-side">
-                <img src="anh 2.jpg" alt="Giới thiệu LANHUB">
-            </div>
+        <div class="image-side">
+            <img src="anh 2.jpg" alt="Giới thiệu LANHUB">
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="tinhnang">
-        <div class="content-row">
-            <div class="text-side">
-                <h1 class="section-title">TÍNH NĂNG NỔI BẬT</h1>
-                
-                <div class="feature-box">
-                    <h3>🔍 QUÉT THIẾT BỊ MẠNG</h3>
-                    <p>Tự động phát hiện tất cả thiết bị đang hoạt động trong hệ thống LAN.<br>
-                    Dễ dàng Kết nối với thiết bị không dây bằng QR CODE </p>
-                </div>
-                <div class="feature-box">
-                    <h3>📡 GIÁM SÁT ONLINE</h3>
-                    <p>Theo dõi trạng thái máy tính theo thời gian thực.<br>
-                    Tìm kiếm file và tất cả thư mục trên tất cả thiết bị trong mạng </p>
-                </div>
-                <div class="feature-box">
-                    <h3>🎮 ĐIỀU KHIỂN TỪ XA</h3>
-                    <p>Hỗ trợ điều khiển và quản lý hệ thống nội bộ dễ dàng.<br>
-                    Xem ảnh và video trực tiếp với chất lượng cao</p>
-                </div>
-            </div>
-            <div class="image-side">
-                <img src="anh 3.jpg" alt="Tính năng LANHUB">
-            </div>
-        </div>
-    </section>
-
-    <section id="download" style="scroll-margin-top: 100px; padding-top: 80px; padding-bottom: 80px;">
-        <div class="content-row">
-            <div class="text-side">
-                <h1 class="section-title" style="text-align: center; margin-bottom: 45px;">
-                    TẢI PHẦN MỀM LANHUB
-                </h1>
-                
-                <div style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;">
-
-                    <div style="flex: 1; min-width: 290px; text-align: center;">
-                        <h2 style="color: #7cc7ff; font-size: 1.65rem; margin-bottom: 15px;">
-                            📱 PHIÊN BẢN DI ĐỘNG
-                        </h2>
-                        <div style="background: rgba(255,255,255,0.08); 
-                                    padding: 20px; 
-                                    border-radius: 20px; 
-                                    border: 2px solid rgba(0,170,255,0.3);">
-                            
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://lanhubtech.xyz/mobile" 
-                                 alt="QR Code Mobile" 
-                                 style="border-radius: 10px; box-shadow: 0 0 18px rgba(0,170,255,0.5); width: 151px;">
-                            
-                            <p style="margin-top: 15px; font-size: 1.05rem; color: #d6e7ff;">
-                                Quét mã QR để tải phiên bản Mobile
-                            </p>
-                            <p style="margin-top: 8px; color: #ffcc77; font-size: 0.95rem;">
-                                ⚠️ Đang phát triển
-                            </p>
-                        </div>
-                    </div>
-
-                    <div style="flex: 1; min-width: 280px;">
-                        <h2 style="color: #7cc7ff; font-size: 1.65rem; margin-bottom: 15px; text-align: center;">
-                            🆓 PHIÊN BẢN MIỄN PHÍ
-                        </h2>
-                        <div class="feature-box download-card" style="padding: 28px 20px; text-align: center;">
-                            <p style="font-size: 1.3rem; margin-bottom: 20px;">
-                                LANHUB TECH <strong>v1.0 Free</strong>
-                            </p>
-                            <ul style="text-align: left; margin-bottom: 25px; line-height: 1.7; font-size: 1rem;">
-                                <li>✔ Quét thiết bị mạng</li>
-                                <li>✔ Giám sát cơ bản</li>
-                                <li>✔ Điều khiển giới hạn</li>
-                                <<div class="download-count">
-    ⬇ Đã tải <span id="downloadCount">0</span>
-
-</div>
-                            </ul>
-                            <a href="https://github.com/solumnam-star/lanhubtech/releases/download/v1.0.0/LANHUB.exe" download style="text-decoration: none; display: block; width: 100%;">
-                                <button class="download-btn" style="width: 100%; cursor: pointer;">
-                                    DOWNLOAD FREE
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div style="flex: 1; min-width: 280px;">
-                        <h2 style="color: #00ffaa; font-size: 1.65rem; margin-bottom: 15px; text-align: center;">
-                            ⭐ PHIÊN BẢN PRO
-                        </h2>
-                        <div class="feature-box download-card" style="padding: 28px 20px; text-align: center;">
-                            <p style="font-size: 1.3rem; margin-bottom: 20px;">
-                                LANHUB TECH <strong>v1.0 Pro</strong>
-                            </p>
-                            <ul style="text-align: left; margin-bottom: 25px; line-height: 1.7; font-size: 1rem;">
-                                <li>✔ Toàn bộ tính năng Free</li>
-                                <li>✔ Giám sát nâng cao</li>
-                                <li>✔ Điều khiển không giới hạn</li>
-                                <div class="download-count">
-   
-    ⬇ Đã tải <span>3,102</span>
-</div>
-                            </ul>
-                            <button class="download-btn" style="width: 100%; background: linear-gradient(to bottom, #00ffaa, #00aa77);">
-                                DOWNLOAD PRO
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="lienhe">
-        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-            <h1 class="section-title">LIÊN HỆ</h1>
+<section id="tinhnang">
+    <div class="content-row">
+        <div class="text-side">
+            <h1 class="section-title">TÍNH NĂNG NỔI BẬT</h1>
+            
             <div class="feature-box">
-                <p><strong>Email:</strong> lanhubtech@gmail.com</p>
-                <p><strong>Zalo:</strong> 0123 456 789</p>
-                <p><strong>Telegram:</strong> @lanhubtech</p>
+                <h3>🔍 QUÉT THIẾT BỊ MẠNG</h3>
+                <p>Tự động phát hiện tất cả thiết bị đang hoạt động trong hệ thống LAN.<br>
+                Dễ dàng Kết nối với thiết bị không dây bằng QR CODE </p>
+            </div>
+            <div class="feature-box">
+                <h3>📡 GIÁM SÁT ONLINE</h3>
+                <p>Theo dõi trạng thái máy tính theo thời gian thực.<br>
+                Tìm kiếm file và tất cả thư mục trên tất cả thiết bị trong mạng </p>
+            </div>
+            <div class="feature-box">
+                <h3>🎮 ĐIỀU KHIỂN TỪ XA</h3>
+                <p>Hỗ trợ điều khiển và quản lý hệ thống nội bộ dễ dàng.<br>
+                Xem ảnh và video trực tiếp với chất lượng cao</p>
             </div>
         </div>
-    </section>
-
-    <div class="footer">
-        LANHUB TECH © 2026 - All Rights Reserved
+        <div class="image-side">
+            <img src="anh 3.jpg" alt="Tính năng LANHUB">
+        </div>
     </div>
+</section>
 
-</body>
-</html>
+<section id="download" style="scroll-margin-top: 100px; padding-top: 80px; padding-bottom: 80px;">
+    <div class="content-row">
+        <div class="text-side">
+            <h1 class="section-title" style="text-align: center; margin-bottom: 45px;">
+                TẢI PHẦN MỀM LANHUB
+            </h1>
+            
+            <div style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;">
+
+                <div style="flex: 1; min-width: 290px; text-align: center;">
+                    <h2 style="color: #7cc7ff; font-size: 1.65rem; margin-bottom: 15px;">
+                        📱 PHIÊN BẢN DI ĐỘNG
+                    </h2>
+                    <div style="background: rgba(255,255,255,0.08); 
+                                padding: 20px; 
+                                border-radius: 20px; 
+                                border: 2px solid rgba(0,170,255,0.3);">
+                        
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://lanhubtech.xyz/mobile" 
+                             alt="QR Code Mobile" 
+                             style="border-radius: 10px; box-shadow: 0 0 18px rgba(0,170,255,0.5); width: 151px;">
+                        
+                        <p style="margin-top: 15px; font-size: 1.05rem; color: #d6e7ff;">
+                            Quét mã QR để tải phiên bản Mobile
+                        </p>
+                        <p style="margin-top: 8px; color: #ffcc77; font-size: 0.95rem;">
+                            ⚠️ Đang phát triển
+                        </p>
+                    </div>
+                </div>
+
+                <div style="flex: 1; min-width: 280px;">
+                    <h2 style="color: #7cc7ff; font-size: 1.65rem; margin-bottom: 15px; text-align: center;">
+                        🆓 PHIÊN BẢN MIỄN PHÍ
+                    </h2>
+                    <div class="feature-box" style="padding: 28px 20px; text-align: center;">
+                        <p style="font-size: 1.3rem; margin-bottom: 20px;">
+                            LANHUB TECH <strong>v1.0 Free</strong>
+                        </p>
+                        <ul style="text-align: left; margin-bottom: 25px; line-height: 1.7; font-size: 1rem;">
+                            <li>✔ Quét thiết bị mạng</li>
+                            <li>✔ Giám sát cơ bản</li>
+                            <li>✔ Điều khiển giới hạn</li>
+                        </ul>
+                        <a href="https://github.com/solumnam-star/lanhubtech/releases/download/v1.0.0/LANHUB.exe" download style="text-decoration: none; display: block; width: 100%;">
+                            <button class="download-btn" style="width: 100%; cursor: pointer;">
+                                DOWNLOAD FREE
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div style="flex: 1; min-width: 280px;">
+                    <h2 style="color: #00ffaa; font-size: 1.65rem; margin-bottom: 15px; text-align: center;">
+                        ⭐ PHIÊN BẢN PRO
+                    </h2>
+                    <div class="feature-box" style="padding: 28px 20px; text-align: center; border-color: #00ffaa;">
+                        <p style="font-size: 1.3rem; margin-bottom: 20px;">
+                            LANHUB TECH <strong>v1.0 Pro</strong>
+                        </p>
+                        <ul style="text-align: left; margin-bottom: 25px; line-height: 1.7; font-size: 1rem;">
+                            <li>✔ Toàn bộ tính năng Free</li>
+                            <li>✔ Giám sát nâng cao</li>
+                            <li>✔ Điều khiển không giới hạn</li>
+                        </ul>
+                        <button class="download-btn" style="width: 100%; background: linear-gradient(to bottom, #00ffaa, #00aa77);">
+                            DOWNLOAD PRO
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="lienhe">
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h1 class="section-title">LIÊN HỆ</h1>
+        <div class="feature-box">
+            <p><strong>Email:</strong> lanhubtech@gmail.com</p>
+            <p><strong>Zalo:</strong> 0123 456 789</p>
+            <p><strong>Telegram:</strong> @lanhubtech</p>
+        </div>
+    </div>
+</section>
+
+<div class="footer">
+    LANHUB TECH © 2026 - All Rights Reserved
+</div>
