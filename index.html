@@ -1,113 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<title>LANHUB TECH</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LANHUB TECH</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background:
-      linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-      url("logo.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; /* Không cho hình nền lặp lại */
-    background-attachment: fixed; /* Khóa chết hình nền không bị cuộn */
-    color: white;
-    font-family: Arial;
-}
+        body {
+            height: 100vh;
+            min-height: 100dvh; /* Tốt hơn cho mobile */
+            background:
+                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
+                url("logo.png") center/cover no-repeat;
+            background-attachment: scroll; /* Quan trọng: thay fixed */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
 
-/* KHUNG CHỨA NÚT (Tối ưu để tự động căn giữa trên điện thoại) */
-.menu {
-    position: absolute;
-    top: 35%;
-    /* Sửa lại đoạn này để trên màn hình nào cũng ở vị trí đẹp, không dùng cố định 1600px */
-    right: 5%; 
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    max-width: 90%;
-}
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            max-width: 280px;
+            padding: 0 20px;
+        }
 
-.menu a {
-    text-decoration: none;
-    display: block;
-}
+        .menu button {
+            width: 100%;
+            height: 58px;
+            border: none;
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 102, 255, 0.25);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.5),
+                        inset 0 2px 4px rgba(255,255,255,0.25);
+            border: 1px solid rgba(255,255,255,0.25);
+            transition: all 0.25s ease;
+        }
 
-/* NÚT BẤM MỚI */
-.menu button {
-    width: 240px; /* Đổi sang 240px (vừa vặn trên mọi điện thoại và máy tính) */
-    height: 55px;
-    border: none;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    background: rgba(0, 102, 255, 0.15); /* Tăng độ đậm một chút để dễ nhìn */
-    backdrop-filter: blur(5px);
-    box-shadow:
-        0 6px 15px rgba(0,0,0,0.5),
-        inset 0 2px 4px rgba(255,255,255,0.3);
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: 0.2s;
-}
+        .menu button:hover,
+        .menu button:active {
+            transform: scale(1.04);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
 
-.menu button:hover {
-    transform: scale(1.05);
-    box-shadow:
-        0 8px 20px rgba(0,0,0,0.6),
-        inset 0 2px 5px rgba(255,255,255,0.5);
-}
-
-.menu button:active {
-    transform: scale(0.97);
-}
-
-/* 2. THÊM ĐOẠN NÀY: Dành riêng cho màn hình Điện thoại */
-@media (max-width: 768px) {
-    .menu {
-        /* Trên điện thoại đưa menu ra chính giữa màn hình cho dễ bấm */
-        left: 50%;
-        right: auto;
-        transform: translate(-50%, -50%); 
-    }
-}
-</style>
+        /* Mobile tối ưu hơn */
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+            .menu {
+                max-width: 92%;
+                padding: 0 15px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<div class="menu">
-
-    <a href="gioithieu.html">
-        <button> GIỚI THIỆU </button>
-    </a>
-
-    <a href="index.html">
-        <button> TRANG CHỦ </button>
-    </a>
-
-    <a href="gioithieu.html#tinhnang">
-        <button> TÍNH NĂNG </button>
-    </a>
-
-    <a href="gioithieu.html#download">
-        <button> TẢI VỀ </button>
-    </a>
-    
-    <a href="gioithieu.html#lienhe">
-        <button>LIÊN HỆ</button>
-    </a>
-
-</div>
-
-</div>
-
+    <div class="menu">
+        <a href="gioithieu.html"><button>GIỚI THIỆU</button></a>
+        <a href="index.html"><button>TRANG CHỦ</button></a>
+        <a href="gioithieu.html#tinhnang"><button>TÍNH NĂNG</button></a>
+        <a href="gioithieu.html#download"><button>TẢI VỀ</button></a>
+        <a href="gioithieu.html#lienhe"><button>LIÊN HỆ</button></a>
+    </div>
 </body>
 </html>
