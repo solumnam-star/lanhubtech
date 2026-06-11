@@ -255,50 +255,9 @@ body {
 
 </style>
         <script>
-async function loadDownloadCount() {
-
-    const countElement =
-        document.getElementById("downloadCount");
-
-    if (!countElement) return;
-
-    try {
-
-        const response = await fetch(
-            "https://api.github.com/repos/solumnam-star/lanhubtech/releases/latest",
-            { cache: "no-cache" }
-        );
-
-        const data = await response.json();
-
-        let total = 0;
-
-        if (data.assets) {
-            data.assets.forEach(asset => {
-                total += asset.download_count || 0;
-            });
-        }
-
-        countElement.innerText =
-            total.toLocaleString("vi-VN");
-
-    } catch (err) {
-
-        console.error(err);
-
-        countElement.innerText = "-";
-    }
-}
-
-document.addEventListener(
-    "DOMContentLoaded",
-    loadDownloadCount
-);
-
-setInterval(
-    loadDownloadCount,
-    120000
-);
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("downloadCount").innerText = "12345";
+});
 </script>
     </head>
 <body>
