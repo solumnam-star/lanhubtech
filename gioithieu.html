@@ -30,6 +30,51 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
+    /* ===================== TOP BANNER ===================== */
+.top-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(90deg, #0066ff, #00aaff, #0066ff, #00aaff);
+    background-size: 200% 100%;
+    overflow: hidden;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    animation: gradientMove 8s linear infinite;
+}
+
+.banner-text {
+    white-space: nowrap;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: 100%;
+    animation: bannerMove 25s linear infinite;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+@keyframes bannerMove {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* Hover effect */
+.top-banner:hover .banner-text {
+    animation-play-state: paused;
+}
 
 
         /* ===================== DOWNLOAD COUNTER ===================== */
@@ -294,6 +339,16 @@ document.addEventListener(
 </script>
     </head>
 <body>
+    <!-- ==================== TOP BANNER CHẠY LIÊN TỤC ==================== -->
+<div class="top-banner">
+    <div class="banner-text">
+        🎉 LANHUB TECH - PHIÊN BẢN MỚI NHẤT ĐÃ CÓ | 
+        TẢI MIỄN PHÍ • ĐIỀU KHIỂN TỪ XA • QUÉT MẠNG SIÊU TỐC • 
+        GIÁM SÁT THỜI GIAN THỰC • HỖ TRỢ 24/7 🚀 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        🎉 LANHUB TECH - TẢI NGAY ĐỂ KHÔNG BỎ LỠ CƠ HỘI!
+    </div>
+</div
 
 <div class="menu">
     <a href="index.html"><button>TRANG CHỦ</button></a>
