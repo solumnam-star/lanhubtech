@@ -20,25 +20,7 @@ body {
     color: white;
     font-family: Arial;
 }
-
-/* KHUNG CHỨA NÚT (Tối ưu để tự động căn giữa trên điện thoại) */
-.menu {
-    position: absolute;
-    top: 35%;
-    /* Sửa lại đoạn này để trên màn hình nào cũng ở vị trí đẹp, không dùng cố định 1600px */
-    right: 5%; 
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    max-width: 90%;
-}
-
-.menu a {
-    text-decoration: none;
-    display: block;
-}
-    /* ===================== TOP BANNER ===================== */
+     /* ===================== TOP BANNER ===================== */
 .top-banner {
     position: fixed;
     top: 0;
@@ -79,6 +61,25 @@ body {
     animation-play-state: paused;
 }
 
+
+/* KHUNG CHỨA NÚT (Tối ưu để tự động căn giữa trên điện thoại) */
+.menu {
+    position: absolute;
+    top: 35%;
+    /* Sửa lại đoạn này để trên màn hình nào cũng ở vị trí đẹp, không dùng cố định 1600px */
+    right: 5%; 
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 90%;
+}
+
+.menu a {
+    text-decoration: none;
+    display: block;
+}
+   
 /* NÚT BẤM MỚI */
 .menu button {
     width: 240px; /* Đổi sang 240px (vừa vặn trên mọi điện thoại và máy tính) */
