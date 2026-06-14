@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadDownloadCount();
     loadVisitorCount();
 });
-    async function loadVisitorCount() {
+  async function loadVisitorCount() {
     try {
         const response = await fetch(
             "https://api.countapi.xyz/hit/lanhubtech.xyz/visits"
@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
             data.value.toLocaleString();
 
     } catch (err) {
-        console.error(err);
+        console.error("VISITOR ERROR:", err);
     }
 }
 </script>
