@@ -262,29 +262,6 @@ section {
         }
        document.getElementById("visitorCount").innerText = "1,258";
 </script>
-async function loadDownloadCount() {
-    } catch (err) {
-        console.error("ERROR:", err);
-        document.getElementById("downloadCount").innerText = "ERR";
-    }
-}
-document.addEventListener("DOMContentLoaded", () => {
-    loadDownloadCount();
-    loadVisitorCount();
-});
-  async function loadVisitorCount() {
-    try {
-        const response = await fetch(
-            "https://api.countapi.xyz/hit/lanhubtech.xyz/visits"
-        );
-
-        const data = await response.json();
-
-        document.getElementById("visitorCount").innerText =
-            data.value.toLocaleString();
-
-    } catch (err) {
-        console.error("VISITOR ERROR:", err);
     }
 }
 </script>
