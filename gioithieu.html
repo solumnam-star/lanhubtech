@@ -263,8 +263,31 @@ section {
 
     }
 }
-</script>
+
 </head>
+    <?php
+$counter_file = "counter.txt";   // Tạo file này cùng cấp với file PHP
+
+// Khởi tạo file nếu chưa có
+if (!file_exists($counter_file)) {
+    file_put_contents($counter_file, "1258"); // Giá trị ban đầu
+}
+
+// Đọc và tăng lượt truy cập
+$count = (int)file_get_contents($counter_file);
+$count++;
+
+// Lưu lại
+file_put_contents($counter_file, $count);
+
+// Định dạng số đẹp (1,258,947)
+$formatted_count = number_format($count);
+?>
+
+<script>
+// Gán giá trị từ PHP vào HTML
+document.getElementById('visitorCount').textContent = '<?php echo $formatted_count; ?>';
+</script>
 
 <body>
     <!-- ==================== BẮT ĐẦU PHẦN BODY==================== -->
@@ -285,11 +308,10 @@ section {
         ✉ EMAIL: lanhubtech@gmail.com
     </div>
 
-    <!-- Lượt truy cập -->
-    <div class="visitor-counter">
-        👁️ <span id="visitorCount">1,258</span> lượt truy cập
-    </div>
-
+   <!-- Lượt truy cập -->
+<div class="visitor-counter">
+    👁️ <span id="visitorCount">Đang tải...</span> lượt truy cập
+</div>
 
   </div>
 
